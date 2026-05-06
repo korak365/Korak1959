@@ -1,0 +1,21 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Output of Hugging Face Trending Monitor",
+    "properties": {
+        "overview": {
+            "type": "string",
+            "title": "Trending models & datasets dataset",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+        },
+        "itemCount": {
+            "type": "number",
+            "title": "Total items collected",
+            "template": "{{run.usageInfo.items}}"
+        },
+        "notified": {
+            "type": "number",
+            "title": "Number of webhook notifications sent",
+            "template": "{{run.usageInfo.requests}}"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "itemType": {
+            "type": "string",
+            "description": "Either 'model' or 'dataset'"
+        },
+        "name": {
+            "type": "string",
+            "description": "Model or dataset name (namespace/name)"
+        },
+        "url": {
+            "type": "string",
+            "description": "Direct URL to the model or dataset page"
+        },
+        "author": {
+            "type": "string",
+            "description": "Author/owner name"
+        },
+        "description": {
+            "type": "string",
+            "description": "Short description or summary"
+        },
+        "tags": {
+            "type": "array",
+            "description": "Tags / tasks / libraries associated"
+        },
+        "likes": {
+            "type": "integer",
+            "description": "Like count (best-effort)"
+        },
+        "downloads": {
+            "type": "integer",
+            "description": "Download count or other metric (best-effort)"
+        },
+        "lastUpdated": {
+            "type": "string",
+            "description": "Last updated date (if available)"
+        },
+        "metrics": {
+            "type": "object",
+            "description": "Any model/dataset metrics found (best-effort)"
+        },
+        "notified": {
+            "type": "boolean",
+            "description": "Whether a notification webhook was sent for this item"
+        },
+        "timestamp": {
+            "type": "string",
+            "description": "When this item was collected (ISO 8601)"
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Trending Overview",
+            "transformation": {
+                "fields": ["itemType", "name", "author", "likes", "url"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "itemType": { "label": "Type", "format": "text" },
+                    "name": { "label": "Name", "format": "link" },
+                    "author": { "label": "Author", "format": "text" },
+                    "likes": { "label": "Likes", "format": "number" },
+                    "url": { "label": "URL", "format": "link" }
+                }
+            }
+        }
+    }
+}
